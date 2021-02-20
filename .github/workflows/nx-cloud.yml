@@ -1,0 +1,12 @@
+name: Nx Standard Use Case
+# from https://medium.com/emoteev-blog/10x-faster-ci-with-nx-and-github-actions-9a51fc4e82a6
+on: push
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: yarn install
+      - run: yarn nx run-many --target=test --all
+      - run: yarn nx run-many --target=lint --all
+      - run: yarn nx run-many --target=build --all --prod
