@@ -7,9 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: npm install -g nx
       - run: npm install
-      - run: nx run-many --target=test --all
-      - run: nx run-many --target=lint --all
+      - run: npx nx run-many --target=test --all
+      - run: npx nx run-many --target=lint --all
       # Not yet...
       # - run: nx run-many --target=build --all --prod
