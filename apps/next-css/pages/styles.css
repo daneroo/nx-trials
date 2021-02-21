@@ -1,32 +1,13 @@
+/* This should really be on body or root... */
 .app {
   font-family: sans-serif;
   min-width: 300px;
   max-width: 600px;
-  margin: 50px auto;
-}
-
-.app .flex {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.app header {
-  background-color: #143055;
-  color: white;
-  padding: 5px;
-  border-radius: 3px;
+  /* margin: 50px auto; */
 }
 
 .app main {
   padding: 0 36px;
-}
-
-
-.app h1 {
-  text-align: center;
-  margin-left: 18px;
-  font-size: 24px;
 }
 
 .app h2 {
@@ -34,4 +15,3 @@
   font-size: 30px;
   margin: 40px 0 10px 0;
 }
-
