@@ -7,9 +7,13 @@ Experiments using [Nx](https://nx.dev)
 - Next.js App
   - with CSS
 - Extract a component
+  - detail
+  - header
 - Styling options
 - Nx Cloud / CI/ CD
   - run 2e2 as part of CI
+- Deploy to vercel
+- Deploy to netlify - <https://github.com/nrwl/nx-examples/blob/master/tools/scripts/deploy.ts>
 
 ## Usage
 
@@ -20,6 +24,11 @@ Let's keep the most used command pattern here:
 ```bash
 # dev server for next-css app
 nx serve next-css  # === nx run next-css:serve
+
+# test,lint and e2e
+nx run next-css:lint
+nx run next-css:test
+nx run next-css-e2e:e2e
 
 # local production build
 nx export next-css
@@ -43,6 +52,7 @@ nx g @nrwl/react:component xyz --project ui
 nx affected:dep-graph
 
 # run tests for current changes
+nx affected:lint
 nx affected:test
 
 # run e2e tests for current changes
