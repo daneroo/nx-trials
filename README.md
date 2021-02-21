@@ -8,12 +8,14 @@ Experiments using [Nx](https://nx.dev)
   - with CSS
 - Extract a component
   - detail
-  - header
+  - [header](https://css-tricks.com/how-to-create-a-shrinking-header-on-scroll-without-javascript/)
 - Styling options
 - Nx Cloud / CI/ CD
   - run 2e2 as part of CI
 - Deploy to vercel
-- Deploy to netlify - <https://github.com/nrwl/nx-examples/blob/master/tools/scripts/deploy.ts>
+- Deploy to netlify
+  - <https://github.com/nrwl/nx-examples/blob/master/tools/scripts/deploy.ts>
+  - <https://rhnmht30.dev/blog/next-image-with-netlify>
 
 ## Usage
 
@@ -30,7 +32,10 @@ nx run next-css:lint
 nx run next-css:test
 nx run next-css-e2e:e2e
 
-# local production build
+# local production build (export)
+nx serve next-css --prod  # === nx run next-css:serve:production
+
+# local production build (export)
 nx export next-css
 serve -l 4600  dist/apps/next-css/exported/
 ```
@@ -63,8 +68,10 @@ nx affected:e2e
 
 ```bash
 # serve the nx exported site: http://192.168.86.31:4600
+# serve the nx prod server site: http://192.168.86.31:4200
 # since running in docker point to local ip:192.168.86.31
 docker run --rm -v "$(pwd):/sitespeed.io" sitespeedio/sitespeed.io:16.7.1 http://192.168.86.31:4600 --mobile
+docker run --rm -v "$(pwd):/sitespeed.io" sitespeedio/sitespeed.io:16.7.1 --mobile http://192.168.86.31:4200 http://192.168.86.31:4200/image-demo
 ```
 
 ## Setup
