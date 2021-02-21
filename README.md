@@ -7,7 +7,41 @@ Experiments using [Nx](https://nx.dev)
   - with CSS
 - Extract a component
 - Styling options
-- Nx Cloud...
+- Nx Cloud / CI/ CD
+
+## Usage
+
+Let's keep the most used command pattern here:
+
+### Development
+
+```bash
+# dev server for next-css app
+nx serve next-css
+```
+
+### Scaffold/generate
+
+```bash
+# Generate UI lib
+nx g @nrwl/react:lib ui
+
+# Add a component
+nx g @nrwl/react:component xyz --project ui
+```
+
+### Affected commands
+
+```bash
+# see what's been affected by changes
+nx affected:dep-graph
+
+# run tests for current changes
+nx affected:test
+
+# run e2e tests for current changes
+nx affected:e2e
+```
 
 ## Setup
 
