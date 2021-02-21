@@ -9,6 +9,11 @@ function CustomApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>Welcome to next-css!</title>
+        <meta name='author' content='Daniel Lauzon' />
+        <meta
+          name='description'
+          content='Next.js with Nx'
+        />
       </Head>
       <div className="app">
         <header className="flex">

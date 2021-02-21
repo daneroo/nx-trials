@@ -3,11 +3,13 @@
 Experiments using [Nx](https://nx.dev)
 
 - Installed NX Cloud App on Github
+- Slide deck - for OttawaJS?
 - Next.js App
   - with CSS
 - Extract a component
 - Styling options
 - Nx Cloud / CI/ CD
+  - run 2e2 as part of CI
 
 ## Usage
 
@@ -17,7 +19,11 @@ Let's keep the most used command pattern here:
 
 ```bash
 # dev server for next-css app
-nx serve next-css
+nx serve next-css  # === nx run next-css:serve
+
+# local production build
+nx export next-css
+serve -l 4600  dist/apps/next-css/exported/
 ```
 
 ### Scaffold/generate
@@ -41,6 +47,14 @@ nx affected:test
 
 # run e2e tests for current changes
 nx affected:e2e
+```
+
+### Sitespeed
+
+```bash
+# serve the nx exported site: http://192.168.86.31:4600
+# since running in docker point to local ip:192.168.86.31
+docker run --rm -v "$(pwd):/sitespeed.io" sitespeedio/sitespeed.io:16.7.1 http://192.168.86.31:4600 --mobile
 ```
 
 ## Setup
