@@ -1,3 +1,4 @@
+import React from 'react';
 import Document, {
   DocumentContext,
   DocumentInitialProps,
@@ -11,12 +12,12 @@ import Document, {
 // We instantiated to add the <html lang='en' /> property
 
 class MyDocument extends Document {
-  static async getInitialProps (ctx: DocumentContext): Promise<DocumentInitialProps> {
+  static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
     const initialProps = await Document.getInitialProps(ctx)
     return initialProps
   }
 
-  render (): JSX.Element {
+  render(): JSX.Element {
     return (
       <Html lang='en'>
         <Head />
