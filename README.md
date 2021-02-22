@@ -7,6 +7,12 @@ Experiments using [Nx](https://nx.dev)
 - [DarkMode in css](https://dev.to/ruppysuppy/dark-mode-using-css-variables-1m3)
 - Extract a component into a library
 - Styling options Sass, Chakra/emotion
+- UI
+  - [Navbar in Chakra](https://raptis.wtf/blog/create-a-navbar-with-chakra-ui-react/)
+  - [Chakra-ui & React Table](https://chakra-ui.com/guides/integrations/with-react-table)
+  - [Responsive table column hiding](https://phppot.com/css/automatic-column-hiding-using-css-in-responsive-table/)
+  - [Photo Galler in Chakra-ui](https://blog.logrocket.com/building-photo-gallery-app-from-scratch-chakra-ui/)
+    - in Chakra-ui
 - Nx Cloud / CI/ CD
   - run 2e2 as part of CI
 - Deploy to vercel

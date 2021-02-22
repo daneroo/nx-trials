@@ -3,6 +3,8 @@
 /* Roboto + mono */
 /* @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:wght@400;700&display=swap'); */
 
+/* Even faster with <link preload .../> */
+/* https://dev.to/thomasledoux1/the-best-way-to-use-google-fonts-in-next-js-tailwind-43a2 */
 *,
 *:after,
 *:before {
