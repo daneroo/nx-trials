@@ -33,7 +33,7 @@ nx g @nrwl/react:component xyz --project ui`
       }, {
         title: 'Run affected commands',
         text: `# see what's been affected by changes
-# This is what runs in the CI
+# This is what runs in the CI (GitHub Actions)
 nx affected:dep-graph
 
 # run tests for current changes
