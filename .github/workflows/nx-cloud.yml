@@ -36,5 +36,5 @@ jobs:
       # run e2e tests for current changes
       - run: npx nx affected:e2e
 
-      # Not yet, this is probably another job: cd
-      # - run: nx run-many --target=build --all --prod
+# Not yet, this is probably another job: cd
+# - run: nx run-many --target=build --all --prod
