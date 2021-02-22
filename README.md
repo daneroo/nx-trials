@@ -14,7 +14,8 @@ Experiments using [Nx](https://nx.dev)
   - [Photo Galler in Chakra-ui](https://blog.logrocket.com/building-photo-gallery-app-from-scratch-chakra-ui/)
     - in Chakra-ui
 - Nx Cloud / CI/ CD
-  - run 2e2 as part of CI
+  - run e2e as part of CI
+  - make it work with pull requests
 - Deploy to vercel
 - Deploy to netlify
   - <https://github.com/nrwl/nx-examples/blob/master/tools/scripts/deploy.ts>
