@@ -1,12 +1,30 @@
 name: Nx CI lint, test, e2e
 # from https://medium.com/emoteev-blog/10x-faster-ci-with-nx-and-github-actions-9a51fc4e82a6
-# updated for npm
-on: push
+# also https://github.com/ruslanguns/nxpm-app-sample/blob/main/.github/workflows/build-test.yml
+
+on: [push, pull_request]
+  # if we wanted to limit this to specific branches (like main)
+  # push:
+  #   branches: [ $default-branch ]
+  # pull_request:
+  #   branches: [ $default-branch ]
+
+env:
+  NX_BRANCH: ${{ github.event.number }}
+  NX_RUN_GROUP: ${{ github.run_id }}
+
 jobs:
   ci:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
     steps:
       - uses: actions/checkout@v2
+      - name: Setup node ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
       - run: npm ci
       #  run all tests
       # - run: npx nx run-many --target=test --all
