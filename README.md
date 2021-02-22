@@ -11,7 +11,7 @@ Experiments using [Nx](https://nx.dev)
   - [Navbar in Chakra](https://raptis.wtf/blog/create-a-navbar-with-chakra-ui-react/)
   - [Chakra-ui & React Table](https://chakra-ui.com/guides/integrations/with-react-table)
   - [Responsive table column hiding](https://phppot.com/css/automatic-column-hiding-using-css-in-responsive-table/)
-  - [Photo Galler in Chakra-ui](https://blog.logrocket.com/building-photo-gallery-app-from-scratch-chakra-ui/)
+  - [Photo Gallery in Chakra-ui](https://blog.logrocket.com/building-photo-gallery-app-from-scratch-chakra-ui/)
     - in Chakra-ui
 - Nx Cloud / CI/ CD
   - run e2e as part of CI
@@ -98,7 +98,7 @@ Run `nx g @nrwl/react:lib my-lib` to generate a library.
 
 > You can also use any of the plugins above to generate libraries as well.
 
-Libraries are shareable across libraries and applications. They can be imported from `@nx-trials/mylib`.
+Libraries are shareable across libraries and applications. They can be imported from `@nx-trials/my-lib`.
 
 ## Development server
 
