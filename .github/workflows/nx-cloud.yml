@@ -25,7 +25,13 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm ci
+
+          # This action replaces `npm ci` but does proper caching of modules
+      # https://github.com/marketplace/actions/npm-or-yarn-install-with-caching
+      # use pinned version
+      - uses: bahmutov/npm-install@v1.6.0
+      # - run: npm ci  # replaced by npm-install action
+
       #  run all tests
       # - run: npx nx run-many --target=test --all
       # - run: npx nx run-many --target=lint --all
