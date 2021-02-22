@@ -7,7 +7,7 @@ export function Index() {
   return (
     <div className={styles.page}>
       <h2>Next Steps</h2>
-      <p>Here are some things you can do with Nx.</p>
+      <p>Here are examples of some things you can do with Nx.</p>
       <Details />
     </div>
   );
