@@ -6,10 +6,8 @@ Experiments using [Nx](https://nx.dev)
 - Slide deck - for OttawaJS?
 - Next.js App
   - with CSS
-- Extract a component
-  - detail
-  - [header](https://css-tricks.com/how-to-create-a-shrinking-header-on-scroll-without-javascript/)
-- Styling options
+- Extract a component into a library
+- Styling options Sass, Chakra/emotion
 - Nx Cloud / CI/ CD
   - run 2e2 as part of CI
 - Deploy to vercel

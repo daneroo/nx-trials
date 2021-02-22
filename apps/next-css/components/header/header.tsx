@@ -7,6 +7,7 @@ import styles from './header.module.css';
 /* eslint-disable-next-line */
 export interface HeaderProps { }
 
+// from https://css-tricks.com/how-to-create-a-shrinking-header-on-scroll-without-javascript/)
 export function Header(props: HeaderProps) {
   return (
     <header className={styles.outer} >
