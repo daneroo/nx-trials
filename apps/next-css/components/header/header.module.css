@@ -1,18 +1,78 @@
-header.header {
+/* Sticky header */
+.outer {
+  /* Make it stick */
+  height: var(--header-outer-height);
+  position: sticky;
+  top: calc(
+    var(--header-height-difference) * -1
+  ); /* Multiply by -1 to get a negative value */
   display: flex;
   align-items: center;
-  justify-content: center;
+
+  /* Other */
+  background-color: var(--header-bg);
+  box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.1);
 }
 
-header.header {
-  background-color: #143055;
-  color: white;
-  padding: 5px;
-  border-radius: 3px;
+/* responsive-wrapper */
+.inner {
+  width: 90%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.header h1 {
-  text-align: center;
-  margin-left: 18px;
-  font-size: 24px;
+.inner {
+  /* Make it stick */
+  height: var(--header-inner-height);
+  position: sticky;
+  top: 0;
+
+  /* Other */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Styling of other elements */
+.logo img {
+  display: block;
+  height: calc(var(--header-inner-height) - 30px);
+}
+
+.navigation {
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.navigation a {
+  font-size: 1.125rem;
+  color: inherit;
+  margin-left: 1.75rem;
+  position: relative;
+  font-weight: 500;
+}
+
+.navigation a {
+  font-size: 1.125rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.navigation a:hover:after {
+  transform: scalex(1);
+}
+
+.navigation a:after {
+  transition: 0.25s ease;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: currentcolor;
+  transform: scalex(0);
+  position: absolute;
+  bottom: -2px;
+  left: 0;
 }

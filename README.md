@@ -33,6 +33,7 @@ nx run next-css:test
 nx run next-css-e2e:e2e
 
 # local production build (export)
+nx build next-css
 nx serve next-css --prod  # === nx run next-css:serve:production
 
 # local production build (export)

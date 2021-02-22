@@ -8,6 +8,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
         <title>Welcome to next-css!</title>
         <meta name='author' content='Daniel Lauzon' />
         <meta
