@@ -9,10 +9,9 @@ on: [push, pull_request]
   # pull_request:
   #   branches: [ $default-branch ]
 
-# Not using this yet, as I don;t understand nx:affected from CI
-# env:
-#   NX_BRANCH: ${{ github.event.number }}
-#   NX_RUN_GROUP: ${{ github.run_id }}
+env:
+  NX_BRANCH: ${{ github.event.number }}
+  NX_RUN_GROUP: ${{ github.run_id }}
 
 jobs:
   CI:
