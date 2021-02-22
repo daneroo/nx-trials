@@ -32,9 +32,9 @@ Let's keep the most used command pattern here:
 nx serve next-css  # === nx run next-css:serve
 
 # test,lint and e2e
-nx run next-css:lint
-nx run next-css:test
-nx run next-css-e2e:e2e
+nx run-many --target=test --all
+nx run-many --target=lint --all
+nx run-many --target=e2e --all
 
 # local production build (export)
 nx build next-css

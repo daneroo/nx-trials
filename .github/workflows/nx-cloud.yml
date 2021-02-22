@@ -1,4 +1,4 @@
-name: Nx CI lint, test, e2e
+name: Nx CI (lint, test, e2e)
 # from https://medium.com/emoteev-blog/10x-faster-ci-with-nx-and-github-actions-9a51fc4e82a6
 # also https://github.com/ruslanguns/nxpm-app-sample/blob/main/.github/workflows/build-test.yml
 
@@ -9,12 +9,13 @@ on: [push, pull_request]
   # pull_request:
   #   branches: [ $default-branch ]
 
-env:
-  NX_BRANCH: ${{ github.event.number }}
-  NX_RUN_GROUP: ${{ github.run_id }}
+# Not using this yet, as I don;t understand nx:affected from CI
+# env:
+#   NX_BRANCH: ${{ github.event.number }}
+#   NX_RUN_GROUP: ${{ github.run_id }}
 
 jobs:
-  ci:
+  CI:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -26,21 +27,23 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-          # This action replaces `npm ci` but does proper caching of modules
+      # This action replaces `npm ci` but does proper caching of modules
       # https://github.com/marketplace/actions/npm-or-yarn-install-with-caching
       # use pinned version
       - uses: bahmutov/npm-install@v1.6.0
       # - run: npm ci  # replaced by npm-install action
 
       #  run all tests
-      # - run: npx nx run-many --target=test --all
-      # - run: npx nx run-many --target=lint --all
+      - run: npx nx run-many --target=test --all
+      - run: npx nx run-many --target=lint --all
+      - run: npx nx run-many --target=e2e --all
 
-      # run tests for current changes
-      - run: npx nx affected:lint
-      - run: npx nx affected:test
-      # run e2e tests for current changes
-      - run: npx nx affected:e2e
+      #  Nx affected version of CI : not working yet
+      # # run tests for current changes
+      # - run: npx nx affected:lint
+      # - run: npx nx affected:test
+      # # run e2e tests for current changes
+      # - run: npx nx affected:e2e
 
 # Not yet, this is probably another job: cd
 # - run: nx run-many --target=build --all --prod
