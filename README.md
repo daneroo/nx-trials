@@ -4,8 +4,7 @@ Experiments using [Nx](https://nx.dev)
 
 - Installed NX Cloud App on Github
 - Slide deck - for OttawaJS?
-- Next.js App
-  - with CSS
+- [DarkMode in css](https://dev.to/ruppysuppy/dark-mode-using-css-variables-1m3)
 - Extract a component into a library
 - Styling options Sass, Chakra/emotion
 - Nx Cloud / CI/ CD
