@@ -1,5 +1,8 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+# single .vercel project mapping file - should move to the app folder, or use vars from CI
+/.vercel
+
 # sitespeed results
 /sitespeed-result
 

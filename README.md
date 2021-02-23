@@ -13,10 +13,9 @@ Experiments using [Nx](https://nx.dev)
   - [Responsive table column hiding](https://phppot.com/css/automatic-column-hiding-using-css-in-responsive-table/)
   - [Photo Gallery in Chakra-ui](https://blog.logrocket.com/building-photo-gallery-app-from-scratch-chakra-ui/)
     - in Chakra-ui
-- Nx Cloud / CI/ CD
-  - run e2e as part of CI
-  - make it work with pull requests
 - Deploy to vercel
+  - <https://nx.dev/latest/react/guides/nextjs#deploying-to-vercel>
+  - <https://blog.nrwl.io/painlessly-build-and-deploy-next-js-apps-with-nx-225e2721da78>
 - Deploy to netlify
   - <https://github.com/nrwl/nx-examples/blob/master/tools/scripts/deploy.ts>
   - <https://rhnmht30.dev/blog/next-image-with-netlify>
@@ -62,9 +61,8 @@ nx g @nrwl/react:component xyz --project ui
 nx affected:dep-graph
 
 # run tests for current changes
-nx affected:lint
 nx affected:test
-
+nx affected:lint
 # run e2e tests for current changes
 nx affected:e2e
 ```
@@ -127,3 +125,21 @@ Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
 ## Understand your workspace
 
 Run `nx dep-graph` to see a diagram of the dependencies of your projects.
+
+## Deploy to vercel
+
+Works for a single app. And not yet from CI.
+This also leaves the `.gitignore`d `.vercel/` directory at the root folder.
+
+Just invoke `vercel`, or `vercel --prod` at root, and include this as the top-level npm script:
+
+```json
+ "vercel-build": "nx build next-css --outputPath=.",
+```
+
+It should be possible to zip and send the built `.next/` directory,
+by using a `.vercelignore`:
+
+```txt
+!.next
+```

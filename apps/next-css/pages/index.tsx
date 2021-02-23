@@ -8,6 +8,7 @@ export function Index() {
     <div className={styles.page}>
       <h2>Next Steps</h2>
       <p>Here are examples of some things you can do with Nx.</p>
+      <p>Even deploy it on Vercel! <em>and soon enough, maybe on Netlify!!</em></p>
       <Details />
     </div>
   );
