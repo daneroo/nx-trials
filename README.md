@@ -29,13 +29,35 @@ Let's keep the most used command pattern here:
 ```bash
 # dev server for next-css app
 nx serve next-css  # === nx run next-css:serve
+```
 
+### Deploy to vercel
+
+Works for a single app. And not yet from CI.
+This also leaves the `.gitignore`d `.vercel/` directory at the root folder.
+
+Just invoke `vercel`, or `vercel --prod` at root, and include this as the top-level npm script:
+
+```json
+ "vercel-build": "nx build next-css --outputPath=.",
+```
+
+It should be possible to zip and send the built `.next/` directory,
+by using a `.vercelignore`:
+
+```txt
+!.next
+```
+
+### Test
+
+```bash
 # test,lint and e2e
 nx run-many --target=test --all
 nx run-many --target=lint --all
 nx run-many --target=e2e --all
 
-# local production build (export)
+# local production build (export?)
 nx build next-css
 nx serve next-css --prod  # === nx run next-css:serve:production
 
@@ -89,57 +111,3 @@ npx create-nx-workspace
 ```
 
 There are also many [community plugins](https://nx.dev/nx-community) you could add.
-
-## Generate a library
-
-Run `nx g @nrwl/react:lib my-lib` to generate a library.
-
-> You can also use any of the plugins above to generate libraries as well.
-
-Libraries are shareable across libraries and applications. They can be imported from `@nx-trials/my-lib`.
-
-## Development server
-
-Run `nx serve my-app` for a dev server. Navigate to <http://localhost:4200/>. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `nx g @nrwl/react:component my-component --project=my-app` to generate a new component.
-
-## Build
-
-Run `nx build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `nx test my-app` to execute the unit tests via [Jest](https://jestjs.io).
-
-Run `nx affected:test` to execute the unit tests affected by a change.
-
-## Running end-to-end tests
-
-Run `ng e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
-
-Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
-
-## Understand your workspace
-
-Run `nx dep-graph` to see a diagram of the dependencies of your projects.
-
-## Deploy to vercel
-
-Works for a single app. And not yet from CI.
-This also leaves the `.gitignore`d `.vercel/` directory at the root folder.
-
-Just invoke `vercel`, or `vercel --prod` at root, and include this as the top-level npm script:
-
-```json
- "vercel-build": "nx build next-css --outputPath=.",
-```
-
-It should be possible to zip and send the built `.next/` directory,
-by using a `.vercelignore`:
-
-```txt
-!.next
-```
