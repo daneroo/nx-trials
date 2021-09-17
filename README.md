@@ -2,6 +2,12 @@
 
 Experiments using [Nx](https://nx.dev)
 
+Fixing shit
+
+```bash
+nx generate @nrwl/next:component --name=test --project=next-css --no-interactive
+```
+
 - Updating everything!
 - Installed NX Cloud App on Github
 - Slide deck - for OttawaJS?
