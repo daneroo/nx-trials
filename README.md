@@ -5,6 +5,8 @@ Experiments using [Nx](https://nx.dev)
 Fixing shit
 
 ```bash
+npx nx run-many --target=test --all --skip-nx-cache=true
+
 nx generate @nrwl/next:component --name=test --project=next-css --no-interactive
 ```
 
