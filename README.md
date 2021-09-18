@@ -5,9 +5,11 @@ Experiments using [Nx](https://nx.dev)
 Fixing shit
 
 ```bash
+npm i -g npm@latest-6 # npm@6.14.15
+nx migrate 11.6.3 # == previous
+
 npx nx run-many --target=test --all --skip-nx-cache=true
 
-nx migrate 11.6.3 # == previous
 
 nx generate @nrwl/next:component --name=test --project=next-css --no-interactive
 ```
