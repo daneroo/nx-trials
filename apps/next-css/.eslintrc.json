@@ -1,8 +1,12 @@
 {
-  "extends": ["plugin:@nrwl/nx/react", "../../.eslintrc.json"],
+  "extends": [
+    "plugin:@nrwl/nx/react-typescript",
+    "../../.eslintrc.json",
+    "next",
+    "next/core-web-vitals"
+  ],
   "ignorePatterns": ["!**/*"],
   "rules": {
-    // For next/link - this eslint json allows comments
     "jsx-a11y/anchor-is-valid": [
       "error",
       {
@@ -11,5 +15,22 @@
         "aspects": ["invalidHref", "preferButton"]
       }
     ]
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {}
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {}
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "rules": {}
+    }
+  ],
+  "env": {
+    "jest": true
   }
 }
