@@ -4,7 +4,7 @@ Experiments using [Nx](https://nx.dev)
 
 ## TODO
 
-- `nx migrate latest` - byt using `yarn`
+- `nx migrate latest` - by using `yarn`
 - Installed NX Cloud App on Github
 - Slide deck - for OttawaJS?
 - [DarkMode in css](https://dev.to/ruppysuppy/dark-mode-using-css-variables-1m3)
