@@ -2,17 +2,9 @@
 
 Experiments using [Nx](https://nx.dev)
 
-Fixing shit
+## TODO
 
-```bash
-npx nx run-many --target=test --all --skip-nx-cache=true
-
-nx migrate 11.6.3 # == previous
-
-nx generate @nrwl/next:component --name=test --project=next-css --no-interactive
-```
-
-- Updating everything!
+- `nx migrate latest` - byt using `yarn`
 - Installed NX Cloud App on Github
 - Slide deck - for OttawaJS?
 - [DarkMode in css](https://dev.to/ruppysuppy/dark-mode-using-css-variables-1m3)
@@ -42,31 +34,15 @@ Let's keep the most used command pattern here:
 nx serve next-css  # === nx run next-css:serve
 ```
 
-### Deploy to vercel
-
-Works for a single app. And not yet from CI.
-This also leaves the `.gitignore`d `.vercel/` directory at the root folder.
-
-Just invoke `vercel`, or `vercel --prod` at root, and include this as the top-level npm script:
-
-```json
- "vercel-build": "nx build next-css --outputPath=.",
-```
-
-It should be possible to zip and send the built `.next/` directory,
-by using a `.vercelignore`:
-
-```txt
-!.next
-```
-
 ### Test
 
 ```bash
-# test,lint and e2e
-nx run-many --target=test --all
-nx run-many --target=lint --all
-nx run-many --target=e2e --all
+# lint, test and e2e
+nx run-many --target=lint --all # --skip-nx-cache=true
+nx run-many --target=test --all # --skip-nx-cache=true
+nx run-many --target=e2e --all # --skip-nx-cache=true
+
+nx generate @nrwl/next:component --name=test --project=next-css --no-interactive
 
 # local production build (export?)
 nx build next-css
@@ -98,6 +74,24 @@ nx affected:test
 nx affected:lint
 # run e2e tests for current changes
 nx affected:e2e
+```
+
+### Deploy to vercel
+
+Works for a single app. And not yet from CI.
+This also leaves the `.gitignore`d `.vercel/` directory at the root folder.
+
+Just invoke `vercel`, or `vercel --prod` at root, and include this as the top-level npm script:
+
+```json
+ "vercel-build": "nx build next-css --outputPath=.",
+```
+
+It should be possible to zip and send the built `.next/` directory,
+by using a `.vercelignore`:
+
+```txt
+!.next
 ```
 
 ### Sitespeed

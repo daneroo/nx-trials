@@ -18,12 +18,7 @@
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ],
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
         "accessToken": "Yzg4MTAyYzEtZjU3MS00ZjNmLTg5OTItNGY2NTViY2FjZmU4fHJlYWQtd3JpdGU=",
         "canTrackAnalytics": false,
         "showUsageWarnings": true
@@ -36,9 +31,15 @@
     },
     "next-css-e2e": {
       "tags": [],
-      "implicitDependencies": [
-        "next-css"
-      ]
+      "implicitDependencies": ["next-css"]
     }
+  },
+  "targetDependencies": {
+    "build": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      }
+    ]
   }
 }
