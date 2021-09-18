@@ -7,6 +7,8 @@ Fixing shit
 ```bash
 npx nx run-many --target=test --all --skip-nx-cache=true
 
+nx migrate 11.6.3 # == previous
+
 nx generate @nrwl/next:component --name=test --project=next-css --no-interactive
 ```
 
