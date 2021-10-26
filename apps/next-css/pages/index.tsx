@@ -1,5 +1,6 @@
 import React from 'react';
 import { DetailCard } from '../components/detail-card/detail-card'
+import { Ui } from '@nx-trials/ui'
 import styles from './index.module.css';
 
 
@@ -9,6 +10,10 @@ export function Index() {
       <h2>Next Steps</h2>
       <p>Here are examples of some things you can do with Nx.</p>
       <p>Even deploy it on Vercel! <em>and soon enough, maybe on Netlify!!</em></p>
+      <div className={styles.box}>
+        <p>Here is an external component from a library, with a parameter and style</p>
+        <Ui name="Nx" />
+      </div>
       <Details />
     </div>
   );

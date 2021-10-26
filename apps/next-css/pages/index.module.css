@@ -1,4 +1,10 @@
-
 .page p {
   text-align: center;
+}
+
+.box {
+  margin: 1em;
+  padding: 1em;
+  color: darkgray;
+  box-shadow: 2px 2px 4px grey;
 }
