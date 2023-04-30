@@ -25,15 +25,6 @@
       }
     }
   },
-  "projects": {
-    "next-css": {
-      "tags": []
-    },
-    "next-css-e2e": {
-      "tags": [],
-      "implicitDependencies": ["next-css"]
-    }
-  },
   "targetDependencies": {
     "build": [
       {
@@ -41,5 +32,22 @@
         "projects": "dependencies"
       }
     ]
-  }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/next"
+  },
+  "generators": {
+    "@nrwl/react": {
+      "application": {
+        "babel": true
+      }
+    },
+    "@nrwl/next": {
+      "application": {
+        "style": "css",
+        "linter": "eslint"
+      }
+    }
+  },
+  "defaultProject": "next-css"
 }
