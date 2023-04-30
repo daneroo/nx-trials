@@ -2,6 +2,8 @@
 
 Experiments using [Nx](https://nx.dev)
 
+2023-04-30: **archiving this project**. Gonna see if I have better luck with [turbo](https://turbo.build/repo/docs)
+
 ## TODO
 
 - `nx migrate latest` - by using `yarn`
